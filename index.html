@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Summer 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-black text-gray-100 min-h-screen antialiased">
+    <div id="app" class="container mx-auto px-4 py-8 flex flex-col items-center min-h-screen">
+
+        <header class="w-full max-w-6xl bg-gray-800 rounded-2xl shadow-2xl p-6 mb-10 mt-4 text-center border border-purple-700 animate-fade-in-down">
+            <h1 class="text-6xl font-poppins font-bold text-white-400 mb-4 tracking-wide flex items-center justify-center">
+                Anime Summer 2025
+            </h1>
+
+        </header>
+
+        <div id="loading" class="flex flex-col items-center justify-center p-10 bg-gray-800 rounded-2xl shadow-xl border border-purple-800 text-gray-200 animate-fade-in">
+            <div class="spinner mb-6"></div>
+            <p class="text-xl font-inter">Getting anime details from the AniList API...</p>
+        </div>
+
+        <div id="error-message" class="hidden mt-8 p-6 bg-red-900 border border-red-700 text-red-200 rounded-lg max-w-xl w-full text-center shadow-xl animate-fade-in-up">
+            <p class="text-lg font-bold mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Transmission Interrupted!</p>
+            <p>Oops! Some anime details could not be fetched. This might be due to network issues or the AniList API experiencing cosmic traffic.</p>
+            <p class="text-sm mt-3 opacity-80">Please check your internet connection or try refreshing the page after a few moments.</p>
+        </div>
+
+        <div id="anime-list-container" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-6xl">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

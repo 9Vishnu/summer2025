@@ -1,0 +1,234 @@
+/* Import Tailwind CSS for utility classes */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Custom CSS for Google Fonts and overall body styling */
+body {
+    font-family: 'Inter', sans-serif; /* Default font for body */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Poppins for headings */
+}
+
+/* --- Global & Utility Styles --- */
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseIcon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-icon {
+    animation: pulseIcon 2s infinite ease-in-out;
+}
+
+/* Spinner for loading state */
+.spinner {
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid #9f7aea; /* Purple */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Header Section --- */
+/* Tailwind classes are mostly applied in HTML for header */
+
+/* --- Anime Card Styles --- */
+.anime-card {
+    background: linear-gradient(135deg, #2d3748, #1a202c); /* Dark gradient for cards */
+    color: #ffffff; /* Default text color set to white */
+    border: 1px solid #4a5568; /* Subtle border */
+    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+    position: relative; /* For the "Coming Soon" badge */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+}
+
+.anime-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Lift and slightly enlarge card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
+    border-color: #9f7aea; /* Highlight border on hover */
+}
+
+.anime-card img {
+    border-bottom: 3px solid #6b46c1; /* Purple accent border below image */
+    transition: transform 0.3s ease-in-out;
+    height: 288px; /* Default height for desktop (based on original h-72) */
+    object-fit: cover; /* Default for desktop to fill space and crop if needed */
+}
+
+.anime-card:hover img {
+    transform: scale(1.05); /* Slight zoom on image on hover */
+}
+
+.anime-card h3 {
+    color: #ffffff; /* Anime title set to white */
+    font-weight: 700;
+    font-size: 1.75rem; /* Larger title */
+    line-height: 1.2;
+}
+
+/* NOTE: The .season-badge CSS rule remains here but is no longer used */
+.season-badge { /* Specific class for season and year badge */
+    background-color: #4a5568; /* Darker background for badge */
+    color: #ffffff; /* Badge text set to white */
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3); /* Inner shadow for depth */
+}
+
+/* Info sections within the card */
+.info-section {
+    background-color: #3b4252; /* Slightly lighter background for info sections */
+    border: 1px solid #4a5568;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligned to start for icon + text/link */
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%; /* Ensure it spans full width inside its container */
+    text-align: left; /* Ensure text alignment is left within the section */
+}
+
+.info-section:hover {
+    background-color: #4a5568;
+}
+
+.info-section span {
+    font-weight: 500;
+    color: #ffffff; /* Info section text (e.g., "Not Available") set to white */
+}
+
+.info-section .value {
+    font-weight: 600;
+    color: #ffffff; /* Values within info sections set to white */
+    flex-grow: 1; /* Allow value/link to take up remaining space */
+    margin-left: 0.5rem;
+    word-break: break-word; /* Prevents long text from overflowing */
+}
+
+/* Style for the hyperlink within info-section */
+.info-section a.value {
+    color: #ffffff; /* Link text (e.g., "{Anilist}") set to white */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+    display: inline-block; /* Allows truncate to work if needed in other contexts */
+}
+
+.info-section a.value:hover {
+    color: #e0e0e0; /* Slightly off-white on hover for subtle change */
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+.info-section i {
+    color: #81e6d9; /* Teal for icons - kept as is for visual variety */
+    margin-right: 0.5rem;
+}
+
+/* Next Episode Info specific styling */
+.next-episode-info {
+    background: linear-gradient(45deg, #6b46c1, #805ad5); /* Purple gradient for next episode */
+    border-color: #805ad5;
+    color: #ffffff; /* Already white, kept as is */
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.next-episode-info i {
+    color: #ffffff; /* Already white, kept as is */
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); /* Subtle shadow for icon */
+}
+
+.next-episode-info .value {
+    color: #ffffff; /* Already white, kept as is */
+}
+
+/* "Coming Soon" Badge */
+/* REMOVED: .coming-soon-badge CSS rule */
+
+
+/* --- Media Queries for Responsiveness (UPDATED) --- */
+@media (max-width: 640px) { /* Targets screens up to 640px wide (typical for most phones) */
+    .anime-card {
+        padding: 0.8rem; /* Further reduced padding to make cards less 'big' */
+    }
+
+    .anime-card img {
+        height: 200px; /* Consistent height for mobile images */
+        object-fit: contain; /* IMPORTANT: Use 'contain' to prevent trimming/cropping */
+        /* This will ensure the whole image is visible, potentially with "letterboxing" */
+    }
+
+    .anime-card h3 {
+        font-size: 1.25rem; /* Further reduced title size for mobile */
+        margin-bottom: 0.4rem; /* Tighter spacing below the title */
+    }
+
+    .info-section {
+        font-size: 0.8rem; /* Smaller font for details */
+        padding: 0.5rem 0.7rem; /* Reduced padding for info sections to make them less bulky */
+        margin-top: 0.4rem; /* Reduced spacing between info sections */
+    }
+
+    .info-section .value {
+        margin-left: 0.3rem; /* Slightly reduced space between icon and text */
+    }
+    .info-section i {
+        margin-right: 0.3rem; /* Slightly reduced space for icon */
+    }
+
+    /* Adjust main header title for smaller screens */
+    header h1 {
+        font-size: 3rem; /* Reduced header title from 6xl (4rem) to 3rem */
+        margin-bottom: 1rem; /* Adjusted margin */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Smaller sub-heading text */
+    }
+
+    header .search-bar input {
+        padding: 0.6rem 0.8rem; /* Adjust search bar padding */
+        font-size: 0.9rem;
+    }
+}
