@@ -8,6 +8,7 @@ const ANIME_TITLES = [
     "My Dress-Up Darling Season 2",    
     "Dandadan Season 2",
     "Rent-a-Girlfriend Season 4",
+    ""There's No Freaking Way I'll Be Your Lover! Unless..."
 ];
 
 // Delay between API requests in milliseconds to avoid rate limiting (e.g., 1 second)
