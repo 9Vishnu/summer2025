@@ -4,7 +4,6 @@ const ANILIST_API_URL = 'https://graphql.anilist.co';
 // List of anime titles to fetch
 const ANIME_TITLES = [
     "City the Animation",
-    "Bad Girl",
     "My Dress-Up Darling Season 2",    
     "Dandadan Season 2",
     "Rent-a-Girlfriend Season 4",
